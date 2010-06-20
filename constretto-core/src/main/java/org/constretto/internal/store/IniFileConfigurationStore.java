@@ -65,7 +65,7 @@ public class IniFileConfigurationStore implements ConfigurationStore {
                     if (tag.equals(DEFAULT_TAG)) {
                         tag = ConfigurationNode.DEFAULT_TAG;
                     }
-                    TaggedPropertySet taggedPropertySet = new TaggedPropertySet(tag, properties, getClass());
+                    TaggedPropertySet taggedPropertySet = new TaggedPropertySet(tag, properties);
                     taggedPropertySets.add(taggedPropertySet);
                 }
             }

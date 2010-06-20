@@ -103,11 +103,11 @@ public class PropertiesStore implements ConfigurationStore {
         List<TaggedPropertySet> taggedPropertySets = new ArrayList<TaggedPropertySet>();
         Set<String> tags = getTags(this.properties);
         for (String tag : tags) {
-            taggedPropertySets.add(new TaggedPropertySet(tag, getPropertiesByTag(tag, this.properties), getClass()));
+            taggedPropertySets.add(new TaggedPropertySet(tag, getPropertiesByTag(tag, this.properties)));
         }
         Map<String, String> unTaggedProperties = getUnTaggedProperties(this.properties);
         if (!unTaggedProperties.isEmpty()) {
-            taggedPropertySets.add(new TaggedPropertySet(getUnTaggedProperties(this.properties), getClass()));
+            taggedPropertySets.add(new TaggedPropertySet(getUnTaggedProperties(this.properties)));
         }
         return taggedPropertySets;
     }
