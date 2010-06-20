@@ -102,6 +102,10 @@ public class DefaultConstrettoConfiguration implements ConstrettoConfiguration {
         return processAndConvert(Byte.class, expression);
     }
 
+    public Map<?, ?> evaluateToMap(String expression) {
+        return processAndConvert(Map.class, expression);
+    }
+
     public <T> T as(Class<T> configurationClass) throws ConstrettoException {
         T objectToConfigure;
         try {

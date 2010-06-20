@@ -15,7 +15,9 @@
  */
 package org.constretto.model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author <a href="mailto:kaare.nilsen@gmail.com">Kaare Nilsen</a>
@@ -50,40 +52,15 @@ public class ConfigurationNode {
         return currentNode;
     }
 
-    private ConfigurationNode() {
-        this.name = ROOT_ELEMENT_NAME;
-        this.tag = DEFAULT_TAG;
-    }
-
-    private ConfigurationNode(String name, String tag, String value) {
-        this.name = name;
-        this.tag = tag;
-        this.value = value;
-    }
-
-    private ConfigurationNode(String name) {
-        this.name = name;
-        this.tag = DEFAULT_TAG;
-    }
-
     public String getValue() {
         return value;
-    }
-
-    public void updateValue(String value) {
-        this.value = value;
     }
 
     public String getTag() {
         return tag;
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean hasChildren(){
+    public boolean hasChildren() {
         return !children.isEmpty();
     }
 
@@ -125,7 +102,21 @@ public class ConfigurationNode {
         return currentNode.parent.getAllMatchingChildren(currentNode.name);
     }
 
+    private ConfigurationNode() {
+        this.name = ROOT_ELEMENT_NAME;
+        this.tag = DEFAULT_TAG;
+    }
 
+    private ConfigurationNode(String name, String tag, String value) {
+        this.name = name;
+        this.tag = tag;
+        this.value = value;
+    }
+
+    private ConfigurationNode(String name) {
+        this.name = name;
+        this.tag = DEFAULT_TAG;
+    }
 
     private boolean containsChild(String name) {
         for (ConfigurationNode currentNode : children) {

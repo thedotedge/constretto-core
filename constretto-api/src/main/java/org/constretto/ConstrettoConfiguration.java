@@ -20,6 +20,7 @@ import org.constretto.exception.ConstrettoException;
 import org.constretto.exception.ConstrettoExpressionException;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Client interface.
@@ -66,6 +67,8 @@ public interface ConstrettoConfiguration extends Iterable<Property> {
     Short evaluateToShort(String expression) throws ConstrettoException;
 
     Byte evaluateToByte(String expression) throws ConstrettoException;
+
+    Map<?,?> evaluateToMap(String expression);
 
     <T> T as(Class<T> configurationClass) throws ConstrettoException;
 
