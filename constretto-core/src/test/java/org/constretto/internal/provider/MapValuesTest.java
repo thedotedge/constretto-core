@@ -3,6 +3,7 @@ package org.constretto.internal.provider;
 import org.constretto.ConstrettoBuilder;
 import org.constretto.ConstrettoConfiguration;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 
@@ -16,6 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class MapValuesTest {
 
     @Test
+    @Ignore
     public void resolveGenericMaps(){
         final ConstrettoConfiguration config = new ConstrettoBuilder()
                 .createPropertiesStore()
