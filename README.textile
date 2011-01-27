@@ -323,3 +323,6 @@ Please go to "http://constretto.lighthouseapp.com/":http://constretto.lighthouse
 h2. For further information and documentation
 
 Constretto has several more nice features, and they are covered in the reference manual at the Constretto official website: "http://constretto.org":http://constretto.org
+
+
+h2. New section
